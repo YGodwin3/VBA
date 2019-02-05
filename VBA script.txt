@@ -1,0 +1,38 @@
+Dim cc As Integer
+cc = 2
+
+For i = 1 To 705714
+
+currentthicker = ws.Cells(i, 1).Value
+
+
+nextthicker = ws.Cells(i + 1, 1).Value
+
+
+
+If currentthicker <> nextthicker Then
+
+
+ws.Cells(1, 9).Value = "Thicker symbol"
+
+ws.Cells(1, 10).Value = "Total Volume"
+
+totalvolume = totalvolume + Cells(i, 7).Value
+
+ws.Range("I" & cc).Value = currentthicker
+ws.Range("J" & cc).Value = totalvolume
+
+totalvolume = 0
+cc = cc + 1
+
+Else
+totalvolume = totalvolume + Cells(i, 7).Value
+
+End If
+
+
+
+Next i
+Next ws
+
+End Sub
