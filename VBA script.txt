@@ -1,3 +1,12 @@
+Sub Stock()
+
+For Each ws In Worksheets
+
+Dim currentthicker As String
+Dim nextthicker As String
+Dim totalvolume As Double
+
+totalvolume = 0
 Dim cc As Integer
 cc = 2
 
@@ -17,8 +26,6 @@ ws.Cells(1, 9).Value = "Thicker symbol"
 
 ws.Cells(1, 10).Value = "Total Volume"
 
-totalvolume = totalvolume + Cells(i, 7).Value
-
 ws.Range("I" & cc).Value = currentthicker
 ws.Range("J" & cc).Value = totalvolume
 
@@ -36,3 +43,4 @@ Next i
 Next ws
 
 End Sub
+
